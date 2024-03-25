@@ -1,11 +1,14 @@
 import sys
+import os
 import streamlit as st
 from crewai import Agent, Task, Crew, Process
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain.agents import Tool
 
 # os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
-openai.api_key = st.secrets["OPEN_API_KEY"]
+#openai.api_key = st.secrets["OPEN_API_KEY"]
+
+
 
 duckduckgo_search = DuckDuckGoSearchRun()
 
