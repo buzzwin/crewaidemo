@@ -1,6 +1,7 @@
+python==3.10.9
 streamlit
 pysqlite3-binary
 crewai
 langchain
 duckduckgo-search
-python==3.10.9
+
