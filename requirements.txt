@@ -3,3 +3,4 @@ pysqlite3-binary
 crewai
 langchain
 duckduckgo-search
+python==3.10.9
