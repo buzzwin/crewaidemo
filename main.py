@@ -25,6 +25,7 @@ def create_crewai_setup(product_name):
         verbose=True,
         allow_delegation=True,
         tools=[duckduckgo_search],
+        LLM="gpt-3.5-turbo"
     )
 
     technology_expert = Agent(
@@ -36,6 +37,7 @@ def create_crewai_setup(product_name):
                       for different business models.""",
         verbose=True,
         allow_delegation=True,
+        LLM="gpt-3.5-turbo"
     )
 
     business_consultant = Agent(
@@ -47,6 +49,7 @@ def create_crewai_setup(product_name):
                       revenue streams to ensure long-term sustainability.""",
         verbose=True,
         allow_delegation=True,
+        LLM="gpt-3.5-turbo"
     )
 
     # Define Tasks
@@ -57,6 +60,7 @@ def create_crewai_setup(product_name):
                         Include at least 10 bullet points addressing key marketing areas.""",
         expected_output="Report on market demand analysis and marketing strategies.",
         agent=market_research_analyst,
+        LLM="gpt-3.5-turbo"
     )
     # Define Task 2
     task2 = Task(
@@ -66,6 +70,7 @@ def create_crewai_setup(product_name):
                     Include at least 10 bullet points on key technological areas.""",
         expected_output="Report on technological aspects of manufacturing.",
         agent=technology_expert,
+        LLM="gpt-3.5-turbo"
     )
     # Define Task 3
     task3 = Task(
@@ -77,6 +82,7 @@ def create_crewai_setup(product_name):
                     Goals and Timeline for the product launch. Current month is Jan 2024.""",
         expected_output="Report on business model evaluation and product launch plan.",
         agent=business_consultant,
+        LLM="gpt-3.5-turbo"
     )
 
     # Create and Run the Crew
@@ -85,6 +91,7 @@ def create_crewai_setup(product_name):
         tasks=[task1, task2, task3],
         verbose=2,
         process=Process.sequential,
+        LLM="gpt-3.5-turbo"
     )
 
     crew_result = product_crew.kickoff()
